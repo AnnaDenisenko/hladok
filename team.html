@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наша Команда — HladOK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ice:#F4F9FC; --frost:#DCEDF6; --deep:#0D2B3E; --cyan:#1898D5; --white:#FFFFFF; --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Manrope',system-ui,sans-serif; background:var(--ice); color:var(--deep); line-height:1.6;
+  }
+  h1,h2,.logo{font-family:'Unbounded',sans-serif}
+  section{max-width:1040px;margin:0 auto;padding:3.5rem 1.25rem; min-height: 80vh;}
+  a{color:var(--cyan); text-decoration:none; font-weight:600;}
+  
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,249,252,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--frost);
+  }
+  .header-inner{
+    max-width:1040px;margin:0 auto;padding:.8rem 1.25rem;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .logo{font-size:1.35rem;font-weight:700;color:var(--deep);text-decoration:none;letter-spacing:.02em}
+  .logo span{color:var(--cyan)}
+  
+  .lang{display:flex;gap:.35rem}
+  .lang button{
+    font-family:'Manrope',sans-serif;font-weight:600;font-size:.85rem;
+    padding:.35rem .7rem;border-radius:999px;border:1px solid var(--frost);
+    background:var(--white);color:var(--deep);cursor:pointer;
+  }
+  .lang button[aria-pressed="true"]{background:var(--deep);color:var(--white);border-color:var(--deep)}
+
+  .back-link { display: inline-block; margin-bottom: 2rem; font-size: 0.95rem; }
+  .back-link:hover { text-decoration: underline; }
+
+  .team-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;
+  }
+  .member {
+    background: var(--white); border: 1px solid var(--frost); border-radius: var(--radius); padding: 1.5rem; text-align: center;
+  }
+  .avatar {
+    width: 120px; height: 120px; border-radius: 50%; background: var(--frost); margin: 0 auto 1rem; overflow: hidden;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .member h3 { font-size: 1.2rem; margin-bottom: 0.2rem; }
+  .role { font-size: 0.9rem; color: var(--cyan); font-weight: 600; margin-bottom: 0.8rem; }
+  .desc { font-size: 0.9rem; opacity: 0.85; }
+
+  footer{background:var(--deep);color:var(--white);text-align:center;padding:2.2rem 1.25rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">Hlad<span>OK</span> ❄</a>
+    <nav class="lang" aria-label="Language">
+      <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+      <button type="button" data-lang="sr" aria-pressed="false">SR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </nav>
+  </div>
+</header>
+
+<section>
+  <a href="index.html" class="back-link" data-i18n="back">← На главную</a>
+  <h1 data-i18n="title">Наша команда</h1>
+  
+  <div class="team-grid">
+    <!-- Team Member 1 -->
+    <div class="member">
+      <div class="avatar"><img src="photos/team1.jpg" alt="Master"></div>
+      <h3>Александр</h3>
+      <div class="role" data-i18n="role1">Главный инженер</div>
+      <div class="desc" data-i18n="desc1">Опыт работы более 10 лет. Специализируется на сложных мульти-сплит системах и диагностике плат управления.</div>
+    </div>
+    
+    <!-- Team Member 2 -->
+    <div class="member">
+      <div class="avatar"><img src="photos/team2.jpg" alt="Master"></div>
+      <h3>Марко</h3>
+      <div class="role" data-i18n="role2">Специалист по монтажу</div>
+      <div class="desc" data-i18n="desc2">Мастер аккуратного монтажа. Гарантирует идеальную чистоту после проведения работ.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Hlad<span style="color:#7FC8E8">OK</span></div>
+</footer>
+
+<script>
+const T = {
+  ru: {
+    back: "← На главную",
+    title: "Наша команда",
+    role1: "Главный инженер",
+    desc1: "Опыт работы более 10 лет. Специализируется на сложных мульти-сплит системах и диагностике электроники.",
+    role2: "Специалист по монтажу",
+    desc2: "Мастер аккуратного монтажа. Гарантирует идеальную геометрию трасс и чистоту после проведения работ."
+  },
+  sr: {
+    back: "← Nazad na početnu",
+    title: "Naš tim",
+    role1: "Glavni inženjer",
+    desc1: "Više od 10 godina iskustva. Specijalizovan za složene multi-split sisteme i dijagnostiku elektronike.",
+    role2: "Specijalista za montažu",
+    desc2: "Majstor za preciznu ugradnju. Garantuje savršenu geometriju instalacija i čistoću nakon obavljenog posla."
+  },
+  en: {
+    back: "← Back to home",
+    title: "Our Team",
+    role1: "Lead Engineer",
+    desc1: "Over 10 years of experience. Specializes in complex multi-split systems and electronic diagnostics.",
+    role2: "Installation Specialist",
+    desc2: "Master of precise installations. Guarantees perfect routing geometry and a spotless space after work is done."
+  }
+};
+
+let lang = "ru";
+function applyLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.dataset.i18n;
+    if(T[l][key] !== undefined) el.textContent = T[l][key];
+  });
+  document.querySelectorAll(".lang button").forEach(b=>
+    b.setAttribute("aria-pressed", b.dataset.lang === l ? "true" : "false"));
+}
+document.querySelectorAll(".lang button").forEach(b=>
+  b.addEventListener("click", ()=>applyLang(b.dataset.lang)));
+
+// Restore language from main page if available, else default to RU
+const urlParams = new URLSearchParams(window.location.search);
+applyLang(urlParams.get('lang') || "ru");
+</script>
+</body>
+</html>
