@@ -177,6 +177,40 @@
   footer .logo{color:var(--white)}
   footer p{opacity:.8;font-size:.9rem;margin-top:.5rem}
 </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HVACBusiness",
+    "name": "HladOK",
+    "url": "https://hladok.rs/",
+    "telephone": "+381652792503",
+    "description": "Ugradnja, popravka, čišćenje i dopuna freona za klima uređaje u Beogradu, Novom Sadu i drugim gradovima Srbije.",
+    "priceRange": "2000–17000 RSD",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Beograd"
+      },
+      {
+        "@type": "City",
+        "name": "Novi Sad"
+      },
+      {
+        "@type": "Country",
+        "name": "Serbia"
+      }
+    ],
+    "availableLanguage": [
+      "Serbian",
+      "Russian",
+      "English"
+    ],
+    "sameAs": [
+      "https://t.me/ADenej"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -207,13 +241,7 @@
     klima uređaja. Dolazimo u Beograd, Novi Sad i druge gradove Srbije.
     Garancija na sve radove.
   </p>
-  <div class="hero-actions">
-    <a class="cta" href="#book" data-i18n="hero_cta">Zakaži termin</a>
-  
-    <a class="phone-cta" href="tel:+381652792503">
-      Pozovite: +381 65 279 2503
-    </a>
-  </div>
+  <a class="cta" href="#book" data-i18n="hero_cta"></a>
 </section>
 
 <section id="services">
@@ -506,7 +534,15 @@ const track = document.getElementById("track");
 for (let i = 1; i <= TOTAL_PHOTOS; i++) {
   const div = document.createElement("div");
   div.className = "shot";
-  div.innerHTML = `<img src="photos/photo${i}.jpg" alt="">`;
+  div.innerHTML = `
+    <img
+      src="photos/photo${i}.jpg"
+      alt="HladOK servis i ugradnja klima uređaja — rad ${i}"
+      loading="lazy"
+      decoding="async"
+      width="1200"
+      height="900">
+  `;
   track.appendChild(div);
 }
 
