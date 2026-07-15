@@ -87,6 +87,29 @@
   }
   .cta:hover{background:#1284BB}
 
+  .hero-actions{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:1rem;
+  }
+
+  .phone-cta{
+    display:inline-block;
+    color:var(--deep);
+    font-weight:700;
+    text-decoration:none;
+    padding:.85rem 1.3rem;
+    border:2px solid var(--cyan);
+    border-radius:999px;
+    background:var(--white);
+  }
+
+  .phone-cta:hover{
+    background:var(--frost);
+  }
+
   .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
   .service{
     background:var(--white);border:1px solid var(--frost);border-radius:var(--radius);
@@ -184,12 +207,18 @@
     klima uređaja. Dolazimo u Beograd, Novi Sad i druge gradove Srbije.
     Garancija na sve radove.
   </p>
-  <a class="cta" href="#book" data-i18n="hero_cta"></a>
+  <div class="hero-actions">
+    <a class="cta" href="#book" data-i18n="hero_cta">Zakaži termin</a>
+  
+    <a class="phone-cta" href="tel:+381652792503">
+      Pozovite: +381 65 279 2503
+    </a>
+  </div>
 </section>
 
 <section id="services">
-  <h2 data-i18n="srv_h"></h2>
-  <div class="services-grid">
+  <h2 data-i18n="srv_h">Klima servis i naše usluge</h2>
+    <div class="services-grid">
     <div class="service"><span class="ico">🔧</span><h3 data-i18n="srv1_h"></h3><p data-i18n="srv1_p"></p></div>
     <div class="service"><span class="ico">🛠</span><h3 data-i18n="srv2_h"></h3><p data-i18n="srv2_p"></p></div>
     <div class="service"><span class="ico">🧊</span><h3 data-i18n="srv3_h"></h3><p data-i18n="srv3_p"></p></div>
@@ -199,7 +228,7 @@
 
 <section id="book">
   <div class="book">
-    <h2 data-i18n="form_h"></h2>
+    <h2 data-i18n="form_h">Zakažite servis klima uređaja</h2>
     <p class="hint" data-i18n="form_hint"></p>
     <form id="bookForm">
       <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
@@ -241,8 +270,8 @@
 </section>
 
 <section id="works">
-  <h2 data-i18n="gal_h"></h2>
-  <div class="gallery">
+  <h2 data-i18n="gal_h">Naši radovi na klima uređajima</h2>
+    <div class="gallery">
     <button class="g-nav g-prev" type="button" aria-label="Previous">‹</button>
     <!-- Gallery dynamically populated via JS -->
     <div class="track" id="track"></div>
@@ -251,8 +280,8 @@
 </section>
 
 <section class="prices" id="prices">
-  <h2 data-i18n="pr_h"></h2>
-  <table>
+  <h2 data-i18n="pr_h">Cenovnik klima servisa</h2>
+    <table>
     <thead><tr><th data-i18n="pr_col1"></th><th data-i18n="pr_col2"></th></tr></thead>
     <tbody>
       <tr><td data-i18n="pr0"></td><td class="free" data-i18n="pr0v"></td></tr>
